@@ -30,7 +30,6 @@ public class AlunoController {
 	@Autowired
 	private AlunosRepository repositoryAlunos;
 	
-	
 	@GetMapping
 	public List<AlunoDto> listaAlunos(){
 		List<AlunosModel> alunosModels = repositoryAlunos.findAll();
@@ -43,6 +42,7 @@ public class AlunoController {
 				.orElseThrow(() -> new ResponseStatusException(HttpStatus.BAD_REQUEST, "Id Inexistente"));
 		
 	}
+	
 	
 	@PostMapping
 	@ResponseStatus(HttpStatus.CREATED)

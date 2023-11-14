@@ -7,6 +7,7 @@ import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.br.CPF;
 
 import com.rodrigo.Escola.model.AlunosModel;
+import com.rodrigo.Escola.model.CursosModel;
 
 import jakarta.persistence.Column;
 import jakarta.validation.constraints.Email;
@@ -26,6 +27,9 @@ public class AlunoDto {
 	private Integer idade;
 	private String curso;
 	
+	private  CursosModel cursosModel;
+	
+	
 	public AlunoDto(AlunosModel alunosModel) {		
 		this.id = alunosModel.getId();
 		this.cpf = alunosModel.getCpf();
@@ -35,6 +39,7 @@ public class AlunoDto {
 		this.sobreNome = alunosModel.getSobreNome();
 		this.idade = alunosModel.getIdade();
 		this.curso = alunosModel.getCurso();
+
 	}
 	
 	public static List<AlunoDto> convert(List<AlunosModel> alunosModels){
