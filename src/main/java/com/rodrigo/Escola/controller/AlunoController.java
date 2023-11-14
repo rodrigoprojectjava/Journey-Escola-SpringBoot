@@ -21,6 +21,8 @@ import com.rodrigo.Escola.dto.AlunoDto;
 import com.rodrigo.Escola.model.AlunosModel;
 import com.rodrigo.Escola.repository.AlunosRepository;
 
+import jakarta.validation.Valid;
+
 @RestController
 @RequestMapping("/alunos")
 public class AlunoController {
@@ -44,7 +46,7 @@ public class AlunoController {
 	
 	@PostMapping
 	@ResponseStatus(HttpStatus.CREATED)
-	public AlunosModel add (@RequestBody AlunosModel alunos) {
+	public AlunosModel add (@Valid Long id, @RequestBody AlunosModel alunos) {
 		return repositoryAlunos.save(alunos);
 	}
 	
